@@ -13,7 +13,7 @@ function compute()
     total = Number(principal) + interest ;
     result = document.getElementById("result");
 
-    result.innerHTML = "If you deposit <span class='bgyellow'>" + principal + "</span>.<br/>" +
+    result.innerHTML = "aIf you deposit <span class='bgyellow'>" + principal + "</span>.<br/>" +
                        "at an interest rate of <span class='bgyellow'>" + rate + "%</span>. <br/>" + 
                        "You will receive an amount of <span class='bgyellow'>" + (Number(principal) + interest) + "</span>, <br />" + 
                        " in the year <span class='bgyellow'>" + (Number(thisYear) + Number(years)) + "</span><br/><br/>";
@@ -34,7 +34,7 @@ function checkData ()
     var principal = document.getElementById("principal");
     var years = document.getElementById("years1");
    
-    if ( principal.value == "" || Number(principal.value) <= 0)
+    if ( Number(principal.value) <= 0 || isNaN(principal.value))
     {
        alert("Enter a positive number");
        principal.value = "";
@@ -42,7 +42,7 @@ function checkData ()
        return false;
     }
   
-    if (years.value == "" || Number(years.value) <= 0)
+    if (Number(years.value) <= 0 || isNaN(years.value))
     {
         alert("Please select a number.");
         years.value = "";
